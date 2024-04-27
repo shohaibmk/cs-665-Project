@@ -1,10 +1,9 @@
 
 | CS-665       | Software Design & Patterns |
 |--------------|----------------------------|
-| Name         | FIRST_NAME LAST_NAME       |
-| Date         | MM/DD/YYYY                 |
-| Course       | Fall / Spring / Summer     |
-| Assignment # |                            |
+| Name         | Shohaib Mallick            |
+| Date         | 05/02/2024                 |
+| Course       | Spring 2024                |
 
 # Assignment Overview
 Please add a paragraph or two overviewing the objectives of the assignment.
