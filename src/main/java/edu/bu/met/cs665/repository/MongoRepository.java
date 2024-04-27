@@ -5,10 +5,9 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
-import org.bson.types.ObjectId;
 
 public class MongoRepository {
-    private static MongoCollection collection;
+    private MongoCollection collection;
 
     /**
      * @param collectionName
@@ -30,6 +29,18 @@ public class MongoRepository {
     }
 
     /**
+     *
+     * @param document
+     * @return Document
+     * @param <T>
+     */
+    public <T> Document search(Document document) {
+        return (Document) collection.find(document).first();
+    }
+
+
+
+    /**
      * insert one record
      * @param document
      */
@@ -42,8 +53,8 @@ public class MongoRepository {
      * @param id
      * @param document
      */
-    public void updateOne(String id, Document document) {
-        collection.replaceOne(new Document("_id", new ObjectId(id)), document);
+    public void updateOne(Document filter, Document update) {
+        collection.updateOne(filter, update);
     }
 
     /**
@@ -53,8 +64,7 @@ public class MongoRepository {
      */
     public <T> void deleteOne(String attribute,T key) {
         collection.deleteOne(new Document(attribute, key));
-//        System.out.println(key.getClass().getName());
-//        System.out.println("deleting");
+
     }
 }
 

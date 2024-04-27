@@ -101,6 +101,17 @@ public class BooksManager {
         return document;
     }
 
+    /**
+     * mthod to find book in the DB
+     * @param ISBN
+     * @return Document
+     */
+    public Document findBook(long ISBN){
+        BooksRepository booksRepository = new BooksRepository();
+        Document bookRecord = booksRepository.search(ISBN);
+        return bookRecord;
+    }
+
     private int bookMenu() {
         Scanner sc = null;
         int choice = 0;
@@ -118,7 +129,12 @@ public class BooksManager {
         return choice;
     }
 
-
+    public void updateBook(Document filter,Document update){
+        System.out.println(filter);
+        System.out.println(update);
+        BooksRepository booksRepository = new BooksRepository();
+        booksRepository.updateOne(filter,update);
+    }
 
 
 

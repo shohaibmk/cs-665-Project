@@ -8,7 +8,8 @@
 
 package edu.bu.met.cs665;
 
-import edu.bu.met.cs665.Library.MembersManager;
+
+import edu.bu.met.cs665.Library.LoanManger;
 
 /**
  * This is the Main class.
@@ -22,10 +23,12 @@ public class Main {
    * However, please note that every assignment/final projects requires JUnit tests.
    */
   public static void main(String[] args) {
-    // Replace the connection string and database name with your actual MongoDB details
 
-    MembersManager membersManager = new MembersManager();
-    membersManager.deleteMember();
+    LoanManger loanManger = new LoanManger();
+    loanManger.loanBook();
+
+//    BooksRepository booksRepository = new BooksRepository();z
+
   }
 
 

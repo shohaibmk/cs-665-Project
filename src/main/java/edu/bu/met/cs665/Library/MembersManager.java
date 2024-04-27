@@ -77,7 +77,11 @@ public class MembersManager {
         }
     }
 
-
+    public Document findMember(String ID){
+        MembersRepository membersRepository = new MembersRepository();
+        Document memberRecord  = membersRepository.search(ID);
+        return memberRecord;
+    }
 
     /**
      * method to find memebers
@@ -97,6 +101,12 @@ public class MembersManager {
             System.err.println(e);
         }
         return null;
+    }
+
+    void updateMember(Document filter, Document update){
+        MembersRepository membersRepository = new MembersRepository();
+        membersRepository.updateOne(filter,update);
+
     }
 
 //    private int memberMenu() {
