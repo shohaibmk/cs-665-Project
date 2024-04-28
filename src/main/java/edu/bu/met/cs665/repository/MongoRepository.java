@@ -1,9 +1,6 @@
 package edu.bu.met.cs665.repository;
 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.*;
 import org.bson.Document;
 
 public class MongoRepository {
@@ -38,7 +35,13 @@ public class MongoRepository {
         return (Document) collection.find(document).first();
     }
 
-
+    /**
+     * method to return all record int the collection
+     * @return
+     */
+    public FindIterable<Document> search(){
+        return (FindIterable<Document>) collection.find();
+    }
 
     /**
      * insert one record
@@ -50,20 +53,29 @@ public class MongoRepository {
 
     /**
      * update one record
-     * @param id
-     * @param document
+     * @param filter
+     * @param update
      */
     public void updateOne(Document filter, Document update) {
         collection.updateOne(filter, update);
     }
 
     /**
-     * delete one record
+     * delete one record using primary/one key
      * @param attribute
      * @param key
      */
     public <T> void deleteOne(String attribute,T key) {
         collection.deleteOne(new Document(attribute, key));
+
+    }
+
+    /**
+     *delete record with using candidate/multiple keys
+     * @param filter
+     */
+    public void deleteOne(Document filter) {
+        collection.deleteOne(filter);
 
     }
 }

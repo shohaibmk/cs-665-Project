@@ -25,7 +25,7 @@ public class Main {
   public static void main(String[] args) {
 
     LoanManger loanManger = new LoanManger();
-    loanManger.loanBook();
+    loanManger.viewLoanedBooks();
 
 //    BooksRepository booksRepository = new BooksRepository();z
 

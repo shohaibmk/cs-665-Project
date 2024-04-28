@@ -11,11 +11,11 @@ public class LoanRepository extends MongoRepository {
 
     /**
      *
-     * @param ISBN
-     * @return
+     * @param filter
+     * @return Document
      */
-    public Document search(String ISBN) {
-        return super.search("ISBN", ISBN);
+    public Document search(Document filter) {
+        return super.search(filter);
     }
 
 }

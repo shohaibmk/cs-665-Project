@@ -35,12 +35,12 @@ public class MembersManager {
             System.out.print("\nID: ");
             ID = scanner.next();
 
-            booksIssued = new ArrayList<>();
-            booksIssued.add("The Forest Gump");
-            booksIssued.add("My Book");
+//            booksIssued = new ArrayList<>();
+//            booksIssued.add("The Forest Gump");
+//            booksIssued.add("My Book");
 
 
-//            booksIssued = null;
+            booksIssued = null;
 
             Document doc = new Document("Name", name).append("ID", ID).append("Books Issued", booksIssued);
 
