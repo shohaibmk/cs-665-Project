@@ -1,6 +1,6 @@
 package edu.bu.met.cs665.Handler;
 
-public class BookReturnHandler implements RequestHandler {
+public class LoanHandler implements RequestHandler {
     private RequestHandler nextHandler;
 
     public void setNextHandler(RequestHandler nextHandler) {
@@ -9,9 +9,11 @@ public class BookReturnHandler implements RequestHandler {
 
     @Override
     public void handleRequest(Request request) {
-        if (request.getType() == RequestType.RETURN_BOOK) {
-            // Handle return request
-            System.out.println("Book return handled");
+        System.out.println("in book checkout handler");
+
+        if (request.getType() == RequestType.CHECKOUT_BOOK) {
+            // Handle checkout request
+            System.out.println("Book checkout handled");
         } else if (nextHandler != null) {
             // Pass the request to the next handler
             nextHandler.handleRequest(request);
