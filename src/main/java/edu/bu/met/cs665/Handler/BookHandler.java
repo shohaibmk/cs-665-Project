@@ -11,7 +11,7 @@ public class BookHandler implements RequestHandler {
     @Override
     public void handleRequest(Request request) {
         System.out.println("in book handler");
-        if (request.getType() == RequestType.BOOK) {
+        if (request.getType() == RequestType.MANAGE_BOOK) {
             // Handle checkout request
             System.out.println("Book checkout book handler");
         } else if (nextHandler != null) {

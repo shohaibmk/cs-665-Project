@@ -11,7 +11,7 @@ public class LoanHandler implements RequestHandler {
     public void handleRequest(Request request) {
         System.out.println("in book checkout handler");
 
-        if (request.getType() == RequestType.CHECKOUT_BOOK) {
+        if (request.getType() == RequestType.LOAN_BOOK) {
             // Handle checkout request
             System.out.println("Book checkout handled");
         } else if (nextHandler != null) {

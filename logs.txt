@@ -1,1 +1,5 @@
-2024-04-26 21:20:51 - msg
+2024-04-29 18:45:40 - Library Management System started
+2024-04-29 18:45:56 - Exception in Main - java.lang.NullPointerException: Cannot invoke "edu.bu.met.cs665.Handler.Request.getType()" because "request" is null
+2024-04-29 18:45:56 - Library Management System exited
+2024-04-29 18:47:52 - Library Management System started
+2024-04-29 18:47:55 - Library Management System exited

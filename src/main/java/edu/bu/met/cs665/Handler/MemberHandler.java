@@ -11,7 +11,7 @@ public class MemberHandler implements RequestHandler {
     @Override
     public void handleRequest(Request request) {
         System.out.println("in member handler");
-        if (request.getType() == RequestType.MEMBER) {
+        if (request.getType() == RequestType.MANAGE_BOOK) {
             // Handle checkout request
             System.out.println("Book member handled");
         } else if (nextHandler != null) {

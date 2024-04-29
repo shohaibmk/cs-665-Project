@@ -11,7 +11,6 @@ public class LogsManager {
     private static final String LOG_FILE_PATH = System.getProperty("user.dir") + "/logs.txt";
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-
     public static void log(String message) {
         String timestamp = DATE_FORMAT.format(new Date());
         String logMessage = timestamp + " - " + message;
