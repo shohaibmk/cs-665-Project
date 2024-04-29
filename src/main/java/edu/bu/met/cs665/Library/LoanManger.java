@@ -141,9 +141,6 @@ public class LoanManger {
 
     private Document findRecord(){
         Document record = null;
-
-
-
         return record;
     }
 
