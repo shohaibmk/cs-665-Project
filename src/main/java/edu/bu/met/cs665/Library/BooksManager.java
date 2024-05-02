@@ -31,7 +31,7 @@ public class BooksManager {
      * method to add Books to the inventory
      */
     public void addBook() {
-
+        LogsManager.log("Request to add book created");
         Scanner scanner = null;
         try {
             scanner = new Scanner(System.in);
@@ -62,29 +62,61 @@ public class BooksManager {
 
             BooksRepository booksRepository = new BooksRepository();
             booksRepository.insertOne(doc);
+
+            LogsManager.log("Book added successfully - ISBN: " + ISBN);
         } catch (Exception e) {
             System.err.print(e);
-//            return 0;
+            LogsManager.log("Exception in BooksManager Class - " + e);
+            LogsManager.log("Book could not be added");
         }
 
     }
 
+    /**
+     * method to remove book from the inventory based on ISBN or Book name
+     */
     public void removeBook() {
+        LogsManager.log("Request to remove book created");
+
         int choice = findBookMenu();
         BooksRepository booksRepository = new BooksRepository();
         Scanner scanner = new Scanner(System.in);
+        Document document = new Document();
         switch (choice) {
             case 1:
+                String bookName;
                 System.out.print("\nBook Name: ");
-                booksRepository.deleteOne(scanner.next());
+                bookName = scanner.nextLine();
+                if (findBook(bookName) != null) {
+                    booksRepository.deleteOne(bookName);
+                    LogsManager.log("Book removed successfully");
+                } else {
+                    System.out.println("Book not found!!!");
+                    LogsManager.log("Book remove failed - book not found");
+
+                }
                 break;
             case 2:
+                long ISBN;
                 System.out.print("\nISBN: ");
-                booksRepository.deleteOne(scanner.nextLong());
+                ISBN = scanner.nextLong();
+                if (findBook(ISBN) != null) {
+                    booksRepository.deleteOne(ISBN);
+                    LogsManager.log("Book removed successfully");
+                } else {
+                    System.out.println("Book not found!!!");
+                    LogsManager.log("Book remove failed - book not found");
+
+                }
                 break;
         }
     }
 
+    /**
+     * method to find books based on ISBN or Book Name
+     *
+     * @return
+     */
     public Document findBook() {
         int choice = findBookMenu();
         BooksRepository booksRepository = new BooksRepository();
@@ -115,6 +147,18 @@ public class BooksManager {
         return booksRepository.search(ISBN);
     }
 
+    /**
+     * method to find book by Name
+     *
+     * @param bookName
+     * @return
+     */
+    public Document findBook(String bookName) {
+        BooksRepository booksRepository = new BooksRepository();
+        return booksRepository.search(ISBN);
+    }
+
+
     private int findBookMenu() {
         Scanner sc = null;
         int choice = 0;
@@ -134,8 +178,6 @@ public class BooksManager {
     }
 
     public void updateBook(Document filter, Document update) {
-        System.out.println(filter);
-        System.out.println(update);
         BooksRepository booksRepository = new BooksRepository();
         booksRepository.updateOne(filter, update);
     }
@@ -180,9 +222,21 @@ public class BooksManager {
 
                         break;
                     case 4:
-                        Document document = findBook();
-                        if (document == null) System.out.println("Book not found!!!");
-                        else System.out.println(document);
+                        Document record = findBook();
+                        if (record == null) System.out.println("Book not found!!!");
+                        else {
+                            System.out.println("----------------------------------------------------------------------------------------------------------");
+                            System.out.printf("| %-20s | %-10s | %-10s | %-30s | %-20s |\n", "ISBN", "Year", "Pages", "Book Name", "Author");
+                            System.out.println("----------------------------------------------------------------------------------------------------------");
+                            ISBN = (long) record.get("ISBN");
+                            yearOfPublication = (int) record.get("Year of Publiction");
+                            noOfPages = (int) record.get("No of Pages");
+                            bookName = (String) record.get("Book Name");
+                            author = (String) record.get("Author");
+                            System.out.printf("| %-20d | %-10d | %-10d | %-30s | %-20s |\n", ISBN, yearOfPublication, noOfPages, bookName, author);
+                            System.out.println("----------------------------------------------------------------------------------------------------------");
+
+                        }
                         break;
                     default:
                         choice = 0;

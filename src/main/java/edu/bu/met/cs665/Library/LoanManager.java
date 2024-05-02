@@ -31,13 +31,13 @@ public class LoanManager {
      * method to loan books
      */
     public void loanBook() {
+        LogsManager.log("Request to loan book created");
         Scanner scanner = new Scanner(System.in);
         BooksManager booksManager = new BooksManager();
         MembersManager membersManager = new MembersManager();
         LoanRepository loanRepository = new LoanRepository();
 
         try {
-            LogsManager.log("Loan intiated");
             System.out.print("\nID: ");
             ID = scanner.next();
             System.out.print("\nISBN: ");
@@ -54,12 +54,11 @@ public class LoanManager {
             if (memberRecord == null) {                                               //member not found in DB
                 System.out.println("Member does not exist in the repository");
                 LogsManager.log("Loan failed - Member does not exist in the repository");
-
             } else if (bookRecord != null && memberRecord != null) {                                                                  //issuing the book
                 ArrayList<String> booksIssued = new ArrayList<>();
 
-                System.out.println(bookRecord);
-                System.out.println(memberRecord);
+//                System.out.println(bookRecord);
+//                System.out.println(memberRecord);
                 int noOfCopies = (int) bookRecord.get("No of Copies");
                 if (memberRecord.get("Books Issued") != null) {                                 //If memeber has books issued
                     booksIssued = (ArrayList<String>) memberRecord.get("Books Issued");
@@ -78,16 +77,16 @@ public class LoanManager {
                     booksManager.updateBook(new Document("ISBN", ISBN), new Document("$set", new Document("No of Copies", --noOfCopies)));
                     membersManager.updateMember(new Document("ID", ID), new Document("$set", new Document("Books Issued", booksIssued)));
 
-                    System.out.println(booksIssued);
+//                    System.out.println(booksIssued);
 
                     loanRepository.insertOne(document);
-                    LogsManager.log("Loan successful - ISBN:" + ISBN + " ID:" + ID);
+                    LogsManager.log("Loan completed successfully - ISBN:" + ISBN + " ID:" + ID);
                 }
-
-
             }
         } catch (Exception e) {
             System.err.print(e);
+            LogsManager.log("Exception in LoanManager Class - " + e);
+            LogsManager.log("Loan Failed");
         }
     }
 
@@ -96,6 +95,8 @@ public class LoanManager {
      * method to return books
      */
     public void returnBook() {
+        LogsManager.log("Request to return book created");
+
         Scanner scanner = new Scanner(System.in);
         BooksManager booksManager = new BooksManager();
         MembersManager membersManager = new MembersManager();
@@ -109,10 +110,10 @@ public class LoanManager {
 
             Document filter = new Document("ID", ID).append("ISBN", ISBN);
             Document record = loanRepository.search(filter);
-            System.out.println(record);
 
             if (record == null) {                                                                     //record not found
                 System.out.println("Record not found !!!");
+                LogsManager.log("Return failed - record not found");
             } else {                                                                                  //if record found
                 Document member = membersManager.findMember(ID);
                 Document book = booksManager.findBook(ISBN);
@@ -132,13 +133,14 @@ public class LoanManager {
 
 
                 loanRepository.deleteOne(filter);
-
-                System.out.println(issuedBooksList);
-                System.out.println(member);
+                System.out.println("Return Complete");
+                LogsManager.log("Return completed successfully");
             }
 
         } catch (Exception e) {
             System.err.print(e);
+            LogsManager.log("Return Failed");
+
         }
     }
 
@@ -160,12 +162,19 @@ public class LoanManager {
             long ISBN;
             String ID, date;
 
+            System.out.println("-------------------------------------------------------");
+
+            System.out.printf("| %-20s | %-15s | %-10s |\n", "Date:", "ISBN:", "ID:");
+            System.out.println("-------------------------------------------------------");
             for (Document record : records) {
                 ISBN = (long) record.get("ISBN");
                 ID = (String) record.get("ID");
                 date = record.get("Date").toString();
-                System.out.print("\nDate:" + date + "\t\t\tISBN:" + ISBN + "\t\t\tID:" + ID);
+
+                System.out.printf("| %-20s | %-15d | %-10s |\n", date, ISBN, ID);
             }
+            System.out.println("-------------------------------------------------------");
+
             LogsManager.log("loan records retrieved and displayed successfully");
 
         } catch (Exception e) {
@@ -176,6 +185,7 @@ public class LoanManager {
     }
 
     public void displayLoanMenu() {
+
         Scanner scanner = null;
         int choice = 1;
         while (choice != 0) {

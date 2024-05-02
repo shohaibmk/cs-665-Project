@@ -162,3 +162,110 @@
 2024-05-01 21:27:46 - Library Management System Starting
 2024-05-01 21:27:49 - Exception in LibraryManagementSystem class - java.util.InputMismatchException
 2024-05-01 21:29:01 - Library Management System Exiting
+2024-05-01 23:11:25 - Request to loan book created
+2024-05-01 23:11:25 - Loan failed - Book does not exist in the repository
+2024-05-01 23:11:25 - Loan failed - Member does not exist in the repository
+2024-05-01 23:23:53 - Request to loan book created
+2024-05-01 23:23:53 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-05-01 23:23:53 - Loan Failed
+2024-05-01 23:25:51 - Request to loan book created
+2024-05-01 23:26:34 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-01 23:27:06 - Request to loan book created
+2024-05-01 23:27:06 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-01 23:28:12 - Request to loan book created
+2024-05-01 23:28:12 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-01 23:31:39 - Request to loan book created
+2024-05-01 23:31:39 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 01:21:34 - Request to loan book created
+2024-05-02 01:21:35 - Loan failed - Member does not exist in the repository
+2024-05-02 01:26:20 - Request to loan book created
+2024-05-02 01:26:20 - Loan failed - Member does not exist in the repository
+2024-05-02 01:27:04 - Request to loan book created
+2024-05-02 01:27:04 - Loan failed - Member does not exist in the repository
+2024-05-02 01:27:37 - Request to loan book created
+2024-05-02 01:27:37 - Loan failed - Member does not exist in the repository
+2024-05-02 01:27:57 - Request to loan book created
+2024-05-02 01:27:57 - Loan failed - Member does not exist in the repository
+2024-05-02 01:28:40 - Request to loan book created
+2024-05-02 01:28:40 - Loan failed - Member does not exist in the repository
+2024-05-02 01:29:12 - Request to loan book created
+2024-05-02 01:29:12 - Loan failed - Member does not exist in the repository
+2024-05-02 01:30:03 - Request to loan book created
+2024-05-02 01:30:03 - Loan failed - Member does not exist in the repository
+2024-05-02 01:30:11 - Request to loan book created
+2024-05-02 01:30:11 - Loan failed - Member does not exist in the repository
+2024-05-02 01:30:49 - Request to loan book created
+2024-05-02 01:30:49 - Loan failed - Member does not exist in the repository
+2024-05-02 01:33:28 - Request to loan book created
+2024-05-02 01:33:29 - Loan failed - Member does not exist in the repository
+2024-05-02 01:33:53 - Library Management System Starting
+2024-05-02 01:33:59 - Request to loan book created
+2024-05-02 01:34:04 - Loan failed - Member does not exist in the repository
+2024-05-02 01:34:07 - Viewing loan records
+2024-05-02 01:34:07 - Retrieving loan records
+2024-05-02 01:34:08 - loan records retrieved and displayed successfully
+2024-05-02 01:35:48 - Library Management System Starting
+2024-05-02 01:35:50 - Viewing loan records
+2024-05-02 01:35:50 - Retrieving loan records
+2024-05-02 01:35:50 - loan records retrieved and displayed successfully
+2024-05-02 01:36:05 - Library Management System Starting
+2024-05-02 01:36:08 - Viewing loan records
+2024-05-02 01:36:08 - Retrieving loan records
+2024-05-02 01:36:08 - loan records retrieved and displayed successfully
+2024-05-02 01:36:20 - Library Management System Starting
+2024-05-02 01:36:22 - Viewing loan records
+2024-05-02 01:36:22 - Retrieving loan records
+2024-05-02 01:36:22 - loan records retrieved and displayed successfully
+2024-05-02 01:37:05 - Library Management System Starting
+2024-05-02 01:37:07 - Viewing loan records
+2024-05-02 01:37:07 - Retrieving loan records
+2024-05-02 01:37:07 - loan records retrieved and displayed successfully
+2024-05-02 01:37:27 - Library Management System Starting
+2024-05-02 01:37:28 - Viewing loan records
+2024-05-02 01:37:28 - Retrieving loan records
+2024-05-02 01:37:28 - loan records retrieved and displayed successfully
+2024-05-02 01:37:39 - Library Management System Starting
+2024-05-02 01:37:42 - Viewing loan records
+2024-05-02 01:37:42 - Retrieving loan records
+2024-05-02 01:37:42 - loan records retrieved and displayed successfully
+2024-05-02 01:37:58 - Library Management System Starting
+2024-05-02 01:38:00 - Viewing loan records
+2024-05-02 01:38:00 - Retrieving loan records
+2024-05-02 01:38:00 - loan records retrieved and displayed successfully
+2024-05-02 01:38:16 - Library Management System Starting
+2024-05-02 01:38:18 - Viewing loan records
+2024-05-02 01:38:18 - Retrieving loan records
+2024-05-02 01:38:18 - loan records retrieved and displayed successfully
+2024-05-02 01:38:47 - Library Management System Starting
+2024-05-02 01:38:50 - Viewing loan records
+2024-05-02 01:38:50 - Retrieving loan records
+2024-05-02 01:38:50 - loan records retrieved and displayed successfully
+2024-05-02 01:40:44 - Viewing loan records
+2024-05-02 01:40:44 - Retrieving loan records
+2024-05-02 01:40:44 - loan records retrieved and displayed successfully
+2024-05-02 01:41:18 - Viewing loan records
+2024-05-02 01:41:18 - Retrieving loan records
+2024-05-02 01:41:18 - loan records retrieved and displayed successfully
+2024-05-02 01:44:09 - Library Management System Starting
+2024-05-02 01:44:11 - Viewing loan records
+2024-05-02 01:44:11 - Retrieving loan records
+2024-05-02 01:44:11 - loan records retrieved and displayed successfully
+2024-05-02 01:50:27 - Library Management System Starting
+2024-05-02 01:50:31 - Viewing loan records
+2024-05-02 01:50:31 - Retrieving loan records
+2024-05-02 01:50:31 - loan records retrieved and displayed successfully
+2024-05-02 01:50:34 - Viewing loan records
+2024-05-02 01:50:34 - Retrieving loan records
+2024-05-02 01:50:34 - loan records retrieved and displayed successfully
+2024-05-02 01:52:17 - Library Management System Starting
+2024-05-02 01:59:35 - Library Management System Starting
+2024-05-02 01:59:39 - Request to remove book created
+2024-05-02 01:59:44 - Book remove failed - book not found
+2024-05-02 02:00:00 - Request to remove book created
+2024-05-02 02:00:03 - Book removed successfully
+2024-05-02 02:02:20 - Library Management System Starting
+2024-05-02 02:03:01 - Library Management System Exiting
+2024-05-02 02:03:04 - Library Management System Starting
+2024-05-02 02:04:02 - Library Management System Exiting
+2024-05-02 02:04:04 - Library Management System Starting
+2024-05-02 02:04:23 - Library Management System Exiting

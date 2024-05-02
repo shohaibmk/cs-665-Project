@@ -11,8 +11,6 @@ public class LoanHandler implements RequestHandler {
 
     @Override
     public void handleRequest(Request request) {
-        System.out.println("in book checkout handler");
-
         if (request.getType() == RequestType.LOAN_BOOK) {            // Handle Loan request
             LoanManager loanManager = new LoanManager();
             loanManager.displayLoanMenu();

@@ -24,6 +24,11 @@ public class Main {
         librarySystem.run();
         LogsManager.log("Library Management System Exiting");
 
+//        LoanManager loanManager = new LoanManager();
+//
+//        // Call the method
+//        loanManager.loanBook();
+
     }
 
 

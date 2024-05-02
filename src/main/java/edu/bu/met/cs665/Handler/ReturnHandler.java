@@ -11,8 +11,6 @@ public class ReturnHandler implements RequestHandler {
 
     @Override
     public void handleRequest(Request request) {
-        System.out.println("in book return handler");
-
         if (request.getType() == RequestType.RETURN_BOOK) {            // Handle return request
             LoanManager loanManager = new LoanManager();
             loanManager.displayReturnMenu();

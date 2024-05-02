@@ -139,8 +139,8 @@ public class MembersManager {
                             if (record.get("Books Issued") != null)
                                 booksIssued = (ArrayList<String>) record.get("Books Issued");
                             else
-                                booksIssued = new ArrayList<>();;
-
+                                booksIssued = new ArrayList<>();
+                            ;
 
 
 //                             Print each record with proper formatting
@@ -151,9 +151,27 @@ public class MembersManager {
 
                         break;
                     case 4:
-                        Document document = findMember();
-                        if (document == null) System.out.println("Member not found!!!");
-                        else System.out.println(document);
+                        Document record = findMember();
+                        if (record == null) System.out.println("Member not found!!!");
+                        else{
+                            System.out.println("--------------------------------------------------------------------------------------------------------------");
+                            System.out.printf("| %-10s | %-20s | %-70s |%n", "ID", "Name", "Books Issued");
+                            System.out.println("--------------------------------------------------------------------------------------------------------------");
+                                ID = (String) record.get("ID");
+                                name = (String) record.get("Name");
+                                if (record.get("Books Issued") != null)
+                                    booksIssued = (ArrayList<String>) record.get("Books Issued");
+                                else
+                                    booksIssued = new ArrayList<>();
+                                ;
+
+
+//                             Print each record with proper formatting
+                                System.out.printf("| %-10s | %-20s | %-70s |%n", ID, name, String.join(", ", booksIssued));
+                            System.out.println("--------------------------------------------------------------------------------------------------------------");
+
+                        }
+
 
                         break;
                     default:

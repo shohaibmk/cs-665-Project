@@ -12,7 +12,6 @@ public class ManageMemberHandler implements RequestHandler {
 
     @Override
     public void handleRequest(Request request) {
-        System.out.println("in member handler");
         if (request.getType() == RequestType.MANAGE_MEMBER) {            // Handle checkout request
             MembersManager membersManager = new MembersManager();
             membersManager.displayMemberManagerMenu();
