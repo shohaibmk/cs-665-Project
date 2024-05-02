@@ -157,3 +157,8 @@
 2024-05-01 18:00:28 - Library Management System Starting
 2024-05-01 18:02:34 - Library Management System Starting
 2024-05-01 21:24:29 - Library Management System Starting
+2024-05-01 21:26:31 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-05-01 21:26:40 - Library Management System Exiting
+2024-05-01 21:27:46 - Library Management System Starting
+2024-05-01 21:27:49 - Exception in LibraryManagementSystem class - java.util.InputMismatchException
+2024-05-01 21:29:01 - Library Management System Exiting

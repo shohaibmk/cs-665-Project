@@ -8,6 +8,9 @@ import java.util.Scanner;
 public class LibraryManagementSystem {
     private RequestHandler chain;
 
+    /**
+     * method to set up the chain of responsibilities
+     */
     public void setupChain() {
         LoanHandler loanHandler = new LoanHandler();
         ReturnHandler returnHandler = new ReturnHandler();
@@ -20,10 +23,18 @@ public class LibraryManagementSystem {
         chain = loanHandler;
     }
 
+    /**
+     * method to process the request
+     *
+     * @param request
+     */
     public void processRequest(Request request) {
         chain.handleRequest(request);
     }
 
+    /**
+     * method to display main menu and make a request
+     */
     public void run() {
         Request request = null;
 
@@ -48,8 +59,7 @@ public class LibraryManagementSystem {
                     default:
                         choice = 0;
                 }
-                if (choice != 0)
-                    processRequest(request);
+                if (choice != 0) processRequest(request);
             }
 
         } catch (Exception e) {
@@ -58,6 +68,11 @@ public class LibraryManagementSystem {
         }
     }
 
+    /**
+     * method to display menu
+     *
+     * @return int
+     */
     private int displayMenu() {
         Scanner scanner = null;
         while (true) {
