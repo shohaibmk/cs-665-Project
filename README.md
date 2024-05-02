@@ -6,10 +6,10 @@
 | Course       | Spring 2024                |
 
 # Assignment Overview
-Please add a paragraph or two overviewing the objectives of the assignment.
+The Library Management System (LMS) is a comprehensive software solution designed to efficiently manage the operations of a library. Leveraging the power of several design patterns, the system provides a robust platform for librarians and patrons to interact, search for books, manage inventory, and handle borrowing and returning processes seamlessly.
 
 # GitHub Repository Link:
-https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
+https://github.com/shohaibmk/cs-665-Project
 
 # Implementation Description 
 
@@ -17,12 +17,20 @@ https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
 For each assignment, please answer the following:
 
 - Explain the level of flexibility in your implementation, including how new object types can
-be easily added or removed in the future.
+be easily added or removed in the future.<br>
+Answer: Easily add or remove handlers by extending a base handler class and linking them in a chain, allowing for dynamic processing of requests, new data access logic can be seamlessly incorporated by extending a repository interface, enabling easy substitution and abstraction of data sources.
+<br><br>
 - Discuss the simplicity and understandability of your implementation, ensuring that it is
-easy for others to read and maintain.
-- Describe how you have avoided duplicated code and why it is important.
+easy for others to read and maintain.<br>
+Answer: My implementation prioritizes clear naming conventions, concise code structure, and well-documented comments, promoting readability and maintainability. Additionally, adherence to established design patterns enhances comprehension for developers familiar with those patterns, fostering ease of understanding and modification.
+<br><br>
+- Describe how you have avoided duplicated code and why it is important.<br>
+Answer: I've minimized duplicated code by encapsulating common functionalities into reusable functions, methods, or classes. This approach enhances maintainability by centralizing logic, reducing the risk of inconsistencies and bugs introduced by redundant code. It also simplifies updates and modifications since changes need only be made in one place, ensuring consistency across the codebase and promoting efficient use of developer resources. Also made use of interfaces and inheritance.
+<br><br>
 - If applicable, mention any design patterns you have used and explain why they were
-chosen.
+chosen.<br>
+Answer: Chain of Responsibilities pattern, Repository pattern, Singleton pattern
+
 
 
 # Maven Commands
