@@ -369,3 +369,15 @@
 2024-05-02 12:54:24 - Viewing loan records
 2024-05-02 12:54:24 - Retrieving loan records
 2024-05-02 12:54:24 - loan records retrieved and displayed successfully
+2024-05-02 16:51:10 - Library Management System Starting
+2024-05-02 16:51:13 - Viewing loan records
+2024-05-02 16:51:13 - Retrieving loan records
+2024-05-02 16:51:13 - loan records retrieved and displayed successfully
+2024-05-02 16:52:36 - Library Management System Starting
+2024-05-02 16:52:39 - Viewing loan records
+2024-05-02 16:52:39 - Retrieving loan records
+2024-05-02 16:52:39 - loan records retrieved and displayed successfully
+2024-05-02 16:52:46 - Viewing loan records
+2024-05-02 16:52:46 - Retrieving loan records
+2024-05-02 16:52:46 - loan records retrieved and displayed successfully
+2024-05-02 17:00:42 - Library Management System Exiting

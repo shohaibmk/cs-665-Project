@@ -57,8 +57,6 @@ public class LoanManager {
             } else if (bookRecord != null && memberRecord != null) {                                                                  //issuing the book
                 ArrayList<String> booksIssued = new ArrayList<>();
 
-//                System.out.println(bookRecord);
-//                System.out.println(memberRecord);
                 int noOfCopies = (int) bookRecord.get("No of Copies");
                 if (memberRecord.get("Books Issued") != null) {                                 //If memeber has books issued
                     booksIssued = (ArrayList<String>) memberRecord.get("Books Issued");
@@ -77,7 +75,6 @@ public class LoanManager {
                     booksManager.updateBook(new Document("ISBN", ISBN), new Document("$set", new Document("No of Copies", --noOfCopies)));
                     membersManager.updateMember(new Document("ID", ID), new Document("$set", new Document("Books Issued", booksIssued)));
 
-//                    System.out.println(booksIssued);
 
                     loanRepository.insertOne(document);
                     LogsManager.log("Loan completed successfully - ISBN:" + ISBN + " ID:" + ID);
@@ -139,6 +136,7 @@ public class LoanManager {
 
         } catch (Exception e) {
             System.err.print(e);
+            LogsManager.log("Exception in LoanManager Class - "+e);
             LogsManager.log("Return Failed");
 
         }
@@ -164,7 +162,7 @@ public class LoanManager {
 
             System.out.println("-------------------------------------------------------");
 
-            System.out.printf("| %-20s | %-15s | %-10s |\n", "Date:", "ISBN:", "ID:");
+            System.out.printf("| %-20s | %-15s | %-10s |\n", "Date", "ISBN", "ID");
             System.out.println("-------------------------------------------------------");
             for (Document record : records) {
                 ISBN = (long) record.get("ISBN");

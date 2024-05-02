@@ -13,7 +13,6 @@ import edu.bu.met.cs665.Library.LogsManager;
 
 /**
  * This is the Main class.
- * The main menu is display
  */
 public class Main {
 
@@ -23,11 +22,6 @@ public class Main {
         LogsManager.log("Library Management System Starting");
         librarySystem.run();
         LogsManager.log("Library Management System Exiting");
-
-//        LoanManager loanManager = new LoanManager();
-//
-//        // Call the method
-//        loanManager.loanBook();
 
     }
 

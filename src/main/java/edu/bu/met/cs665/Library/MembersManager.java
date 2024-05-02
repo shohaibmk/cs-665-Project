@@ -27,8 +27,11 @@ public class MembersManager {
      * method to add members
      */
     public void addMemeber() {
+        LogsManager.log("Request to add member created");
+
         Scanner scanner = null;
         try {
+
             scanner = new Scanner(System.in);
 
             System.out.print("\nName: ");
@@ -44,8 +47,11 @@ public class MembersManager {
             MembersRepository membersRepository = new MembersRepository();
             membersRepository.insertOne(doc);
             System.out.println("Member Added");
+            LogsManager.log("Member added successfully - ID: " + ID);
         } catch (Exception e) {
             System.err.print(e);
+            LogsManager.log("Exception in MembersManager Class - " + e);
+            LogsManager.log("Add member failed");
         }
     }
 
@@ -53,23 +59,31 @@ public class MembersManager {
      * method to delete members
      */
     public void deleteMember() {
-        Document document = findMember();
+        LogsManager.log("Request to remove member created");
 
-        if (document == null) {                                   //document not found in DB
-            System.out.println("Member not found");
-        } else {                                                  //document found in DB
-            ArrayList<String> issuedBooksList = (ArrayList<String>) document.get("Books Issued");
+        try {
+            Document document = findMember();
+
+            if (document == null) {                                   //document not found in DB
+                System.out.println("Member not found");
+            } else {                                                  //document found in DB
+                ArrayList<String> issuedBooksList = (ArrayList<String>) document.get("Books Issued");
 
 
-            if (issuedBooksList == null || issuedBooksList.isEmpty()) {
-                MembersRepository membersRepository = new MembersRepository();
-                membersRepository.deleteOne(document.get("ID").toString());
-                System.out.println("Member Deleted");
+                if (issuedBooksList == null || issuedBooksList.isEmpty()) {
+                    MembersRepository membersRepository = new MembersRepository();
+                    membersRepository.deleteOne(document.get("ID").toString());
+                    System.out.println("Member Deleted");
 
-            } else {
-                System.out.println("Member has issued books, so cannot be deleted");
+                } else {
+                    System.out.println("Member has issued books, so cannot be deleted");
+                }
+
             }
-
+            LogsManager.log("Remove request processed successfully");
+        } catch (Exception e) {
+            LogsManager.log("remove member failed");
+            LogsManager.log("Exception in Membersmanager Class - " + e);
         }
     }
 
@@ -122,40 +136,21 @@ public class MembersManager {
                         deleteMember();
                         break;
                     case 3:
-                        String name, ID;
-                        ArrayList<String> booksIssued = new ArrayList<>();
+                        LogsManager.log("Request to view all members created");
+                        try {
+                            LogsManager.log("Retrieving member records");
 
-                        MembersRepository membersRepository = new MembersRepository();
-                        FindIterable<Document> records = membersRepository.search();
+                            String name, ID;
+                            ArrayList<String> booksIssued = new ArrayList<>();
 
-
-                        System.out.println("--------------------------------------------------------------------------------------------------------------");
-                        System.out.printf("| %-10s | %-20s | %-70s |%n", "ID", "Name", "Books Issued");
-                        System.out.println("--------------------------------------------------------------------------------------------------------------");
-                        for (Document record : records) {
-                            ID = (String) record.get("ID");
-                            name = (String) record.get("Name");
-                            if (record.get("Books Issued") != null)
-                                booksIssued = (ArrayList<String>) record.get("Books Issued");
-                            else
-                                booksIssued = new ArrayList<>();
-                            ;
+                            MembersRepository membersRepository = new MembersRepository();
+                            FindIterable<Document> records = membersRepository.search();
 
 
-//                             Print each record with proper formatting
-                            System.out.printf("| %-10s | %-20s | %-70s |%n", ID, name, String.join(", ", booksIssued));
-                        }
-                        System.out.println("--------------------------------------------------------------------------------------------------------------");
-
-
-                        break;
-                    case 4:
-                        Document record = findMember();
-                        if (record == null) System.out.println("Member not found!!!");
-                        else{
                             System.out.println("--------------------------------------------------------------------------------------------------------------");
                             System.out.printf("| %-10s | %-20s | %-70s |%n", "ID", "Name", "Books Issued");
                             System.out.println("--------------------------------------------------------------------------------------------------------------");
+                            for (Document record : records) {
                                 ID = (String) record.get("ID");
                                 name = (String) record.get("Name");
                                 if (record.get("Books Issued") != null)
@@ -164,10 +159,44 @@ public class MembersManager {
                                     booksIssued = new ArrayList<>();
                                 ;
 
+                                System.out.printf("| %-10s | %-20s | %-70s |%n", ID, name, String.join(", ", booksIssued));
+                            }
+                            System.out.println("--------------------------------------------------------------------------------------------------------------");
+                            LogsManager.log("Members retrieved and display successfully");
+                        } catch (Exception e) {
+                            LogsManager.log("Exception in MembersManager Class - " + e);
+                            LogsManager.log("Failed to retrieve data");
+
+                        }
+
+                        break;
+                    case 4:
+                        LogsManager.log("Request to view all members created");
+                        try {
+                            LogsManager.log("Retrieving member records");
+                            Document record = findMember();
+                            if (record == null) System.out.println("Member not found!!!");
+                            else {
+                                System.out.println("--------------------------------------------------------------------------------------------------------------");
+                                System.out.printf("| %-10s | %-20s | %-70s |%n", "ID", "Name", "Books Issued");
+                                System.out.println("--------------------------------------------------------------------------------------------------------------");
+                                ID = (String) record.get("ID");
+                                name = (String) record.get("Name");
+                                if (record.get("Books Issued") != null)
+                                    booksIssued = (ArrayList<String>) record.get("Books Issued");
+                                else
+                                    booksIssued = new ArrayList<>();
+                                ;
 
 //                             Print each record with proper formatting
                                 System.out.printf("| %-10s | %-20s | %-70s |%n", ID, name, String.join(", ", booksIssued));
-                            System.out.println("--------------------------------------------------------------------------------------------------------------");
+                                System.out.println("--------------------------------------------------------------------------------------------------------------");
+
+                            }
+                            LogsManager.log("Members retrieved and display successfully");
+                        } catch (Exception e) {
+                            LogsManager.log("Exception in MembersManager Class - " + e);
+                            LogsManager.log("Failed to retrieve data");
 
                         }
 

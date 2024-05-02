@@ -88,13 +88,11 @@ public class BooksManager {
                 System.out.print("\nBook Name: ");
                 bookName = scanner.nextLine();
                 if (findBook(bookName) != null) {
-//                    booksRepository.deleteOne(bookName);
                     removeBookByName(bookName);
                     LogsManager.log("Book removed successfully");
                 } else {
                     System.out.println("Book not found!!!");
                     LogsManager.log("Book remove failed - book not found");
-
                 }
                 break;
             case 2:
@@ -102,13 +100,11 @@ public class BooksManager {
                 System.out.print("\nISBN: ");
                 ISBN = scanner.nextLong();
                 if (findBook(ISBN) != null) {
-//                    booksRepository.deleteOne(ISBN);
                     removeBookByISBN(ISBN);
                     LogsManager.log("Book removed successfully");
                 } else {
                     System.out.println("Book not found!!!");
                     LogsManager.log("Book remove failed - book not found");
-
                 }
                 break;
         }
@@ -116,18 +112,20 @@ public class BooksManager {
 
     /**
      * method to remove book by ISBN
+     *
      * @param ISBN
      */
-    public void removeBookByISBN(long ISBN){
+    public void removeBookByISBN(long ISBN) {
         BooksRepository booksRepository = new BooksRepository();
         booksRepository.deleteOne(ISBN);
     }
 
     /**
      * method to remove book by book name
+     *
      * @param bookName
      */
-    public void removeBookByName(String bookName){
+    public void removeBookByName(String bookName) {
         BooksRepository booksRepository = new BooksRepository();
         booksRepository.deleteOne(bookName);
     }
@@ -220,42 +218,61 @@ public class BooksManager {
                         removeBook();
                         break;
                     case 3:
+                        LogsManager.log("Viewing books record");
                         String bookName, author;
                         long ISBN;
                         int yearOfPublication, noOfPages;
-                        BooksRepository booksRepository = new BooksRepository();
-                        FindIterable<Document> records = booksRepository.search();
+                        try {
+                            LogsManager.log("Retrieving records");
+                            BooksRepository booksRepository = new BooksRepository();
+                            FindIterable<Document> records = booksRepository.search();
 
-                        System.out.println("----------------------------------------------------------------------------------------------------------");
-                        System.out.printf("| %-20s | %-10s | %-10s | %-30s | %-20s |\n", "ISBN", "Year", "Pages", "Book Name", "Author");
-                        System.out.println("----------------------------------------------------------------------------------------------------------");
-
-                        for (Document record : records) {
-                            ISBN = (long) record.get("ISBN");
-                            yearOfPublication = (int) record.get("Year of Publiction");
-                            noOfPages = (int) record.get("No of Pages");
-                            bookName = (String) record.get("Book Name");
-                            author = (String) record.get("Author");
-
-                            System.out.printf("| %-20d | %-10d | %-10d | %-30s | %-20s |\n", ISBN, yearOfPublication, noOfPages, bookName, author);
-                        }
-                        System.out.println("----------------------------------------------------------------------------------------------------------");
-
-                        break;
-                    case 4:
-                        Document record = findBook();
-                        if (record == null) System.out.println("Book not found!!!");
-                        else {
                             System.out.println("----------------------------------------------------------------------------------------------------------");
                             System.out.printf("| %-20s | %-10s | %-10s | %-30s | %-20s |\n", "ISBN", "Year", "Pages", "Book Name", "Author");
                             System.out.println("----------------------------------------------------------------------------------------------------------");
-                            ISBN = (long) record.get("ISBN");
-                            yearOfPublication = (int) record.get("Year of Publiction");
-                            noOfPages = (int) record.get("No of Pages");
-                            bookName = (String) record.get("Book Name");
-                            author = (String) record.get("Author");
-                            System.out.printf("| %-20d | %-10d | %-10d | %-30s | %-20s |\n", ISBN, yearOfPublication, noOfPages, bookName, author);
+
+                            for (Document record : records) {
+                                ISBN = (long) record.get("ISBN");
+                                yearOfPublication = (int) record.get("Year of Publiction");
+                                noOfPages = (int) record.get("No of Pages");
+                                bookName = (String) record.get("Book Name");
+                                author = (String) record.get("Author");
+
+                                System.out.printf("| %-20d | %-10d | %-10d | %-30s | %-20s |\n", ISBN, yearOfPublication, noOfPages, bookName, author);
+                            }
                             System.out.println("----------------------------------------------------------------------------------------------------------");
+                            LogsManager.log("Retrieved and displayed books record successfully");
+                        } catch (Exception e) {
+                            LogsManager.log("Exception in BooksManager Class - " + e);
+                            LogsManager.log("Retrieving records failed");
+                        }
+                        break;
+                    case 4:
+                        LogsManager.log("Viewing books record");
+                        try {
+                            LogsManager.log("Retrieving books record");
+
+                            Document record = findBook();
+                            if (record == null) {
+                                System.out.println("Book not found!!!");
+                            } else {
+                                System.out.println("----------------------------------------------------------------------------------------------------------");
+                                System.out.printf("| %-20s | %-10s | %-10s | %-30s | %-20s |\n", "ISBN", "Year", "Pages", "Book Name", "Author");
+                                System.out.println("----------------------------------------------------------------------------------------------------------");
+                                ISBN = (long) record.get("ISBN");
+                                yearOfPublication = (int) record.get("Year of Publiction");
+                                noOfPages = (int) record.get("No of Pages");
+                                bookName = (String) record.get("Book Name");
+                                author = (String) record.get("Author");
+                                System.out.printf("| %-20d | %-10d | %-10d | %-30s | %-20s |\n", ISBN, yearOfPublication, noOfPages, bookName, author);
+                                System.out.println("----------------------------------------------------------------------------------------------------------");
+
+                            }
+                            LogsManager.log("Retrieved and displayed books record successfully");
+
+                        } catch (Exception e) {
+                            LogsManager.log("Exception in BooksManager Class - " + e);
+                            LogsManager.log("Retrieving books record failed");
 
                         }
                         break;
