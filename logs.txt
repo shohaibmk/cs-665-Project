@@ -1,5 +1,159 @@
-2024-04-29 18:45:40 - Library Management System started
-2024-04-29 18:45:56 - Exception in Main - java.lang.NullPointerException: Cannot invoke "edu.bu.met.cs665.Handler.Request.getType()" because "request" is null
-2024-04-29 18:45:56 - Library Management System exited
-2024-04-29 18:47:52 - Library Management System started
-2024-04-29 18:47:55 - Library Management System exited
+2024-04-29 19:31:33 - Library Management System started
+2024-04-29 19:31:35 - Exception in LibraryManagemntSystem class - java.util.InputMismatchException
+2024-04-29 19:41:13 - Library Management System exited
+2024-04-29 19:55:57 - Library Management System Starting
+2024-04-29 19:56:00 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-04-29 19:56:02 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-04-29 19:56:02 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-04-29 19:56:02 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-04-29 19:56:03 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-04-29 19:56:03 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-04-29 19:56:03 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-04-29 19:56:03 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-04-29 19:56:03 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-04-29 19:56:04 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-04-29 19:56:04 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-04-29 19:56:04 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-04-29 19:56:25 - Library Management System Starting
+2024-04-29 19:59:31 - Library Management System Starting
+2024-04-29 20:23:00 - Library Management System Starting
+2024-04-29 20:27:58 - Library Management System Starting
+2024-04-29 20:28:17 - Loan intiated
+2024-04-29 20:28:22 - Loan successful - ISBN:123 ID:567
+2024-04-29 20:28:36 - Loan intiated
+2024-04-29 20:28:42 - Loan failed - Member does not exist in the repository
+2024-04-29 20:29:06 - Loan intiated
+2024-04-29 20:29:10 - Loan failed - Book does not exist in the repository
+2024-04-29 20:31:11 - Library Management System Starting
+2024-04-29 20:31:15 - Loan intiated
+2024-04-29 20:31:19 - Loan failed - Book does not exist in the repository
+2024-04-29 20:31:23 - Loan intiated
+2024-04-29 20:31:31 - Loan failed - Member does not exist in the repository
+2024-04-29 20:31:36 - Loan intiated
+2024-04-29 20:31:40 - Loan successful - ISBN:123 ID:567
+2024-04-29 20:32:03 - Library Management System Exiting
+2024-04-29 20:57:34 - Library Management System Starting
+2024-04-29 20:57:38 - Viewing loan records
+2024-04-29 20:57:38 - Retrieving loan records
+2024-04-29 20:57:38 - loan records retrieved and displayed
+2024-05-01 15:40:22 - Library Management System Starting
+2024-05-01 15:40:28 - Viewing loan records
+2024-05-01 15:40:28 - Retrieving loan records
+2024-05-01 15:40:28 - loan records retrieved and displayed successfully
+2024-05-01 15:44:14 - Library Management System Starting
+2024-05-01 15:44:44 - Library Management System Starting
+2024-05-01 15:44:49 - Viewing loan records
+2024-05-01 15:44:49 - Retrieving loan records
+2024-05-01 15:44:49 - loan records retrieved and displayed successfully
+2024-05-01 15:44:56 - Viewing loan records
+2024-05-01 15:44:56 - Retrieving loan records
+2024-05-01 15:44:56 - loan records retrieved and displayed successfully
+2024-05-01 16:17:01 - Library Management System Starting
+2024-05-01 16:17:13 - Library Management System Starting
+2024-05-01 16:18:32 - Library Management System Starting
+2024-05-01 16:19:11 - Library Management System Starting
+2024-05-01 16:20:12 - Library Management System Starting
+2024-05-01 16:20:54 - Library Management System Starting
+2024-05-01 16:21:43 - Library Management System Starting
+2024-05-01 16:23:44 - Library Management System Starting
+2024-05-01 16:34:33 - Library Management System Starting
+2024-05-01 16:41:42 - Library Management System Starting
+2024-05-01 16:41:58 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:42:19 - Library Management System Starting
+2024-05-01 16:42:25 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:42:50 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:43:10 - Library Management System Starting
+2024-05-01 16:43:13 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:44:12 - Library Management System Starting
+2024-05-01 16:44:16 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:44:36 - Library Management System Starting
+2024-05-01 16:44:39 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:45:28 - Library Management System Starting
+2024-05-01 16:45:33 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:48:30 - Library Management System Starting
+2024-05-01 16:48:32 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:50:58 - Library Management System Starting
+2024-05-01 16:51:01 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:52:35 - Library Management System Starting
+2024-05-01 16:52:37 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:52:57 - Library Management System Starting
+2024-05-01 16:52:59 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:53:38 - Library Management System Starting
+2024-05-01 16:53:41 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:54:36 - Library Management System Starting
+2024-05-01 16:54:41 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:55:54 - Library Management System Starting
+2024-05-01 16:55:56 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:56:41 - Library Management System Starting
+2024-05-01 16:58:21 - Library Management System Starting
+2024-05-01 16:58:24 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:59:07 - Library Management System Starting
+2024-05-01 16:59:09 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:59:18 - Library Management System Starting
+2024-05-01 16:59:20 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:59:27 - Library Management System Starting
+2024-05-01 16:59:29 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:59:42 - Library Management System Starting
+2024-05-01 16:59:44 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 16:59:51 - Library Management System Starting
+2024-05-01 17:00:06 - Library Management System Starting
+2024-05-01 17:00:30 - Library Management System Starting
+2024-05-01 17:00:32 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 17:00:48 - Library Management System Starting
+2024-05-01 17:00:50 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 17:01:07 - Library Management System Starting
+2024-05-01 17:01:28 - Library Management System Starting
+2024-05-01 17:01:31 - Exception in LoanManager Class - java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.bson.Document.get(Object)" is null
+2024-05-01 17:02:10 - Library Management System Starting
+2024-05-01 17:03:12 - Library Management System Starting
+2024-05-01 17:03:34 - Library Management System Starting
+2024-05-01 17:03:57 - Library Management System Starting
+2024-05-01 17:04:11 - Library Management System Starting
+2024-05-01 17:04:40 - Library Management System Starting
+2024-05-01 17:05:03 - Library Management System Starting
+2024-05-01 17:05:31 - Library Management System Starting
+2024-05-01 17:17:41 - Library Management System Starting
+2024-05-01 17:19:12 - Library Management System Starting
+2024-05-01 17:19:44 - Exception in LoanManager Class - java.util.InputMismatchException
+2024-05-01 17:23:43 - Loan intiated
+2024-05-01 17:24:03 - Loan successful - ISBN:2345 ID:Mallick
+2024-05-01 17:24:08 - Viewing loan records
+2024-05-01 17:24:08 - Retrieving loan records
+2024-05-01 17:24:08 - loan records retrieved and displayed successfully
+2024-05-01 17:24:20 - Loan intiated
+2024-05-01 17:24:34 - Loan failed - No books in the inventory
+2024-05-01 17:25:08 - Viewing loan records
+2024-05-01 17:25:08 - Retrieving loan records
+2024-05-01 17:25:08 - loan records retrieved and displayed successfully
+2024-05-01 17:25:20 - Viewing loan records
+2024-05-01 17:25:20 - Retrieving loan records
+2024-05-01 17:25:20 - loan records retrieved and displayed successfully
+2024-05-01 17:25:55 - Viewing loan records
+2024-05-01 17:25:55 - Retrieving loan records
+2024-05-01 17:25:56 - loan records retrieved and displayed successfully
+2024-05-01 17:42:09 - Library Management System Starting
+2024-05-01 17:42:15 - Exception in LoanManager Class - java.lang.NullPointerException
+2024-05-01 17:43:07 - Library Management System Starting
+2024-05-01 17:45:14 - Library Management System Starting
+2024-05-01 17:45:17 - Exception in LoanManager Class - java.lang.NullPointerException
+2024-05-01 17:45:50 - Library Management System Starting
+2024-05-01 17:46:12 - Library Management System Starting
+2024-05-01 17:46:36 - Library Management System Starting
+2024-05-01 17:47:06 - Library Management System Starting
+2024-05-01 17:49:47 - Library Management System Starting
+2024-05-01 17:50:36 - Library Management System Starting
+2024-05-01 17:51:08 - Library Management System Starting
+2024-05-01 17:52:59 - Library Management System Starting
+2024-05-01 17:53:49 - Library Management System Starting
+2024-05-01 17:54:12 - Library Management System Starting
+2024-05-01 17:54:31 - Library Management System Starting
+2024-05-01 17:55:15 - Library Management System Starting
+2024-05-01 17:55:28 - Library Management System Starting
+2024-05-01 17:55:58 - Library Management System Starting
+2024-05-01 17:56:15 - Library Management System Starting
+2024-05-01 17:57:12 - Library Management System Starting
+2024-05-01 18:00:05 - Library Management System Starting
+2024-05-01 18:00:08 - Exception in LoanManager Class - java.lang.NullPointerException
+2024-05-01 18:00:28 - Library Management System Starting
+2024-05-01 18:02:34 - Library Management System Starting
+2024-05-01 21:24:29 - Library Management System Starting

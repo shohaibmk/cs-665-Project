@@ -1,5 +1,7 @@
 package edu.bu.met.cs665.Handler;
 
+import edu.bu.met.cs665.Library.LoanManager;
+
 public class LoanHandler implements RequestHandler {
     private RequestHandler nextHandler;
 
@@ -11,11 +13,11 @@ public class LoanHandler implements RequestHandler {
     public void handleRequest(Request request) {
         System.out.println("in book checkout handler");
 
-        if (request.getType() == RequestType.LOAN_BOOK) {
-            // Handle checkout request
-            System.out.println("Book checkout handled");
-        } else if (nextHandler != null) {
-            // Pass the request to the next handler
+        if (request.getType() == RequestType.LOAN_BOOK) {            // Handle Loan request
+            LoanManager loanManager = new LoanManager();
+            loanManager.displayLoanMenu();
+            System.out.println("Book loan handled");
+        } else if (nextHandler != null) {            // Pass the request to the next handler
             nextHandler.handleRequest(request);
         }
     }

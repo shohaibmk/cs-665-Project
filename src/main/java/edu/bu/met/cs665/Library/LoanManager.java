@@ -7,19 +7,20 @@ import org.bson.Document;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class LoanManger {
+public class LoanManager {
 
     long ISBN;
     String ID, bookName;
     Date date;
 
-    public LoanManger() {
+    public LoanManager() {
 
     }
 
-    public LoanManger(long ISBN, String ID, String bookName, Date date) {
+    public LoanManager(long ISBN, String ID, String bookName, Date date) {
         this.ISBN = ISBN;
         this.ID = ID;
         this.date = date;
@@ -36,6 +37,7 @@ public class LoanManger {
         LoanRepository loanRepository = new LoanRepository();
 
         try {
+            LogsManager.log("Loan intiated");
             System.out.print("\nID: ");
             ID = scanner.next();
             System.out.print("\nISBN: ");
@@ -47,10 +49,13 @@ public class LoanManger {
 
             if (bookRecord == null) {                                                //book not found in DB
                 System.out.println("Book does not exist in the repository");
+                LogsManager.log("Loan failed - Book does not exist in the repository");
             }
             if (memberRecord == null) {                                               //member not found in DB
                 System.out.println("Member does not exist in the repository");
-            } else {                                                                  //issuing the book
+                LogsManager.log("Loan failed - Member does not exist in the repository");
+
+            } else if (bookRecord != null && memberRecord != null) {                                                                  //issuing the book
                 ArrayList<String> booksIssued = new ArrayList<>();
 
                 System.out.println(bookRecord);
@@ -61,6 +66,7 @@ public class LoanManger {
                 }
                 if (noOfCopies == 0) {                                                        //book not in inventory
                     System.out.println("Book cannot be issued, no books in the inventory!!!");
+                    LogsManager.log("Loan failed - No books in the inventory");
                 } else {
                     Date currentDate = new Date();
                     SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
@@ -75,6 +81,7 @@ public class LoanManger {
                     System.out.println(booksIssued);
 
                     loanRepository.insertOne(document);
+                    LogsManager.log("Loan successful - ISBN:" + ISBN + " ID:" + ID);
                 }
 
 
@@ -100,14 +107,13 @@ public class LoanManger {
             System.out.print("\nISBN: ");
             ISBN = scanner.nextLong();
 
-            Document filter = new Document("ID",ID).append("ISBN",ISBN);
+            Document filter = new Document("ID", ID).append("ISBN", ISBN);
             Document record = loanRepository.search(filter);
             System.out.println(record);
 
-            if(record == null){                                                                     //record not found
+            if (record == null) {                                                                     //record not found
                 System.out.println("Record not found !!!");
-            }
-            else {                                                                                  //if record found
+            } else {                                                                                  //if record found
                 Document member = membersManager.findMember(ID);
                 Document book = booksManager.findBook(ISBN);
                 ArrayList<String> issuedBooksList = (ArrayList<String>) member.get("Books Issued");
@@ -119,12 +125,10 @@ public class LoanManger {
 
                 booksManager.updateBook(new Document("ISBN", ISBN), new Document("$set", new Document("No of Copies", ++noOfCopies)));
 
-                if(issuedBooksList.isEmpty()){
+                if (issuedBooksList.isEmpty()) {
                     membersManager.updateMember(new Document("ID", ID), new Document("$set", new Document("Books Issued", null)));
-                }
-                else
+                } else
                     membersManager.updateMember(new Document("ID", ID), new Document("$set", new Document("Books Issued", issuedBooksList)));
-
 
 
                 loanRepository.deleteOne(filter);
@@ -133,13 +137,12 @@ public class LoanManger {
                 System.out.println(member);
             }
 
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.err.print(e);
         }
     }
 
-    private Document findRecord(){
+    private Document findRecord() {
         Document record = null;
         return record;
     }
@@ -149,15 +152,82 @@ public class LoanManger {
      */
     public void viewLoanedBooks() {
         LoanRepository loanRepository = new LoanRepository();
-        FindIterable<Document> records = loanRepository.search();
-        long ISBN;
-        String ID,date;
+        LogsManager.log("Viewing loan records");
+        LogsManager.log("Retrieving loan records");
+        try {
 
-        for (Document record : records) {
-            ISBN = (long) record.get("ISBN");
-            ID = (String) record.get("ID");
-            date =  record.get("Date").toString();
-            System.out.print("\nDate:"+date+"\t\t\tISBN:"+ISBN+"\t\t\tID:"+ID);
+            FindIterable<Document> records = loanRepository.search();
+            long ISBN;
+            String ID, date;
+
+            for (Document record : records) {
+                ISBN = (long) record.get("ISBN");
+                ID = (String) record.get("ID");
+                date = record.get("Date").toString();
+                System.out.print("\nDate:" + date + "\t\t\tISBN:" + ISBN + "\t\t\tID:" + ID);
+            }
+            LogsManager.log("loan records retrieved and displayed successfully");
+
+        } catch (Exception e) {
+            LogsManager.log("Exception in LoanManager Class - " + e);
+            LogsManager.log("Retrieving loan records failed");
+
+        }
+    }
+
+    public void displayLoanMenu() {
+        Scanner scanner = null;
+        int choice = 1;
+        while (choice != 0) {
+            try {
+                scanner = new Scanner(System.in);
+                System.out.println("\n\nMENU\n1)Loan Book\n2)View Loaned Books\nAny other number to go back");
+                System.out.print("Choice: ");
+                choice = scanner.nextInt();
+                switch (choice) {
+                    case 1:
+                        loanBook();
+                        break;
+                    case 2:
+                        viewLoanedBooks();
+                        break;
+                    default:
+                        choice = 0;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input !!!");
+                LogsManager.log("Exception in LoanManager Class - " + e);
+            } catch (Exception e) {
+                LogsManager.log("Exception in LoanManager Class - " + e);
+            }
+        }
+    }
+
+    public void displayReturnMenu() {
+        Scanner scanner = null;
+        int choice = 1;
+        while (choice != 0) {
+            try {
+                scanner = new Scanner(System.in);
+                System.out.println("\n\nMENU\n1)Return Book\n2)View Loaned Books\nAny other number to go back");
+                System.out.print("Choice: ");
+                choice = scanner.nextInt();
+                switch (choice) {
+                    case 1:
+                        returnBook();
+                        break;
+                    case 2:
+                        viewLoanedBooks();
+                        break;
+                    default:
+                        choice = 0;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input !!!");
+                LogsManager.log("Exception in LoanManager Class - " + e);
+            } catch (Exception e) {
+                LogsManager.log("Exception in LoanManager Class - " + e);
+            }
         }
     }
 }
