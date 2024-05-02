@@ -43,6 +43,7 @@ public class MembersManager {
 
             MembersRepository membersRepository = new MembersRepository();
             membersRepository.insertOne(doc);
+            System.out.println("Member Added");
         } catch (Exception e) {
             System.err.print(e);
         }
@@ -60,12 +61,10 @@ public class MembersManager {
             ArrayList<String> issuedBooksList = (ArrayList<String>) document.get("Books Issued");
 
 
-            System.out.println(issuedBooksList);
             if (issuedBooksList == null || issuedBooksList.isEmpty()) {
                 MembersRepository membersRepository = new MembersRepository();
                 membersRepository.deleteOne(document.get("ID").toString());
-//                System.out.println(document.get("ID"));
-                System.out.println("Deleting");
+                System.out.println("Member Deleted");
 
             } else {
                 System.out.println("Member has issued books, so cannot be deleted");

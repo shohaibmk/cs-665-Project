@@ -88,7 +88,8 @@ public class BooksManager {
                 System.out.print("\nBook Name: ");
                 bookName = scanner.nextLine();
                 if (findBook(bookName) != null) {
-                    booksRepository.deleteOne(bookName);
+//                    booksRepository.deleteOne(bookName);
+                    removeBookByName(bookName);
                     LogsManager.log("Book removed successfully");
                 } else {
                     System.out.println("Book not found!!!");
@@ -101,7 +102,8 @@ public class BooksManager {
                 System.out.print("\nISBN: ");
                 ISBN = scanner.nextLong();
                 if (findBook(ISBN) != null) {
-                    booksRepository.deleteOne(ISBN);
+//                    booksRepository.deleteOne(ISBN);
+                    removeBookByISBN(ISBN);
                     LogsManager.log("Book removed successfully");
                 } else {
                     System.out.println("Book not found!!!");
@@ -111,6 +113,25 @@ public class BooksManager {
                 break;
         }
     }
+
+    /**
+     * method to remove book by ISBN
+     * @param ISBN
+     */
+    public void removeBookByISBN(long ISBN){
+        BooksRepository booksRepository = new BooksRepository();
+        booksRepository.deleteOne(ISBN);
+    }
+
+    /**
+     * method to remove book by book name
+     * @param bookName
+     */
+    public void removeBookByName(String bookName){
+        BooksRepository booksRepository = new BooksRepository();
+        booksRepository.deleteOne(bookName);
+    }
+
 
     /**
      * method to find books based on ISBN or Book Name

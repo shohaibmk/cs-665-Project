@@ -269,3 +269,103 @@
 2024-05-02 02:04:02 - Library Management System Exiting
 2024-05-02 02:04:04 - Library Management System Starting
 2024-05-02 02:04:23 - Library Management System Exiting
+2024-05-02 11:07:50 - Request to loan book created
+2024-05-02 11:07:51 - Loan failed - Member does not exist in the repository
+2024-05-02 11:12:57 - Request to loan book created
+2024-05-02 11:12:57 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:13:09 - Request to loan book created
+2024-05-02 11:13:09 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:13:52 - Request to loan book created
+2024-05-02 11:13:52 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:16:01 - Request to loan book created
+2024-05-02 11:16:01 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:26:08 - Library Management System Starting
+2024-05-02 11:26:16 - Request to return book created
+2024-05-02 11:26:31 - Return completed successfully
+2024-05-02 11:27:48 - Request to loan book created
+2024-05-02 11:27:53 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:27:56 - Viewing loan records
+2024-05-02 11:27:56 - Retrieving loan records
+2024-05-02 11:27:56 - loan records retrieved and displayed successfully
+2024-05-02 11:39:47 - Request to return book created
+2024-05-02 11:39:48 - Return completed successfully
+2024-05-02 11:39:57 - Request to return book created
+2024-05-02 11:39:57 - Return completed successfully
+2024-05-02 11:43:30 - Request to return book created
+2024-05-02 11:43:44 - Request to loan book created
+2024-05-02 11:44:14 - Request to loan book created
+2024-05-02 11:44:14 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:44:38 - Request to loan book created
+2024-05-02 11:44:38 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:45:13 - Request to loan book created
+2024-05-02 11:45:13 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:47:08 - Request to loan book created
+2024-05-02 11:47:09 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:47:59 - Request to loan book created
+2024-05-02 11:47:59 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:48:26 - Request to loan book created
+2024-05-02 11:48:26 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:48:56 - Request to loan book created
+2024-05-02 11:48:56 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:48:56 - Request to return book created
+2024-05-02 11:48:56 - Return completed successfully
+2024-05-02 11:48:56 - Request to loan book created
+2024-05-02 11:48:56 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 11:50:36 - Library Management System Starting
+2024-05-02 11:58:05 - Library Management System Starting
+2024-05-02 12:02:51 - Request to loan book created
+2024-05-02 12:02:51 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 12:02:51 - Request to return book created
+2024-05-02 12:02:51 - Return completed successfully
+2024-05-02 12:02:51 - Request to loan book created
+2024-05-02 12:02:51 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 12:05:24 - Library Management System Starting
+2024-05-02 12:05:29 - Request to add book created
+2024-05-02 12:08:45 - Book added successfully - ISBN: 9780065023961
+2024-05-02 12:10:23 - Request to add book created
+2024-05-02 12:10:23 - Book added successfully - ISBN: 9780065023961
+2024-05-02 12:14:45 - Request to add book created
+2024-05-02 12:14:45 - Book added successfully - ISBN: 9780065023961
+2024-05-02 12:16:24 - Request to loan book created
+2024-05-02 12:16:24 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 12:16:24 - Request to return book created
+2024-05-02 12:16:24 - Return completed successfully
+2024-05-02 12:16:24 - Request to loan book created
+2024-05-02 12:16:24 - Loan completed successfully - ISBN:1234 ID:2610
+2024-05-02 12:16:45 - Request to add book created
+2024-05-02 12:16:45 - Book added successfully - ISBN: 9780065023961
+2024-05-02 12:27:47 - Library Management System Starting
+2024-05-02 12:27:52 - Request to remove book created
+2024-05-02 12:28:36 - Book removed successfully
+2024-05-02 12:29:15 - Library Management System Starting
+2024-05-02 12:29:38 - Request to remove book created
+2024-05-02 12:30:11 - Request to remove book created
+2024-05-02 12:30:57 - Request to remove book created
+2024-05-02 12:32:14 - Request to remove book created
+2024-05-02 12:33:21 - Request to remove book created
+2024-05-02 12:33:39 - Request to remove book created
+2024-05-02 12:36:08 - Request to remove book created
+2024-05-02 12:36:23 - Request to remove book created
+2024-05-02 12:37:07 - Request to remove book created
+2024-05-02 12:38:17 - Library Management System Starting
+2024-05-02 12:38:26 - Request to remove book created
+2024-05-02 12:39:37 - Request to remove book created
+2024-05-02 12:47:38 - Request to remove book created
+2024-05-02 12:50:39 - Request to add book created
+2024-05-02 12:50:39 - Book added successfully - ISBN: 9780065023961
+2024-05-02 12:51:32 - Request to add book created
+2024-05-02 12:51:32 - Book added successfully - ISBN: 9780065023961
+2024-05-02 12:51:47 - Request to add book created
+2024-05-02 12:51:47 - Book added successfully - ISBN: 9780065023961
+2024-05-02 12:52:00 - Request to add book created
+2024-05-02 12:52:00 - Book added successfully - ISBN: 9780065023961
+2024-05-02 12:52:11 - Request to add book created
+2024-05-02 12:52:11 - Book added successfully - ISBN: 9780065023961
+2024-05-02 12:52:32 - Request to add book created
+2024-05-02 12:52:32 - Book added successfully - ISBN: 9780065023961
+2024-05-02 12:52:32 - Request to add book created
+2024-05-02 12:52:32 - Book added successfully - ISBN: 9780065023961
+2024-05-02 12:54:10 - Library Management System Starting
+2024-05-02 12:54:24 - Viewing loan records
+2024-05-02 12:54:24 - Retrieving loan records
+2024-05-02 12:54:24 - loan records retrieved and displayed successfully
